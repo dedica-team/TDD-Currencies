@@ -1,57 +1,60 @@
-package org.haffson.currencies;
+package team.dedica.currencies;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 // See CurrencyTest for details. This class could probably use _a lot_ more tests, mostly
 // around parsing, but I'm lazy. :-)
 public class MoneyTest {
 
     @Test
-    public void testParse() {
+    void testParse() {
         Money.parse("USD 1,000.00");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testParseFails() {
-        Money.parse("USD 1.000,24");
+        assertThatThrownBy(() -> Money.parse("USD 1.000,24"))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    public void testFormat() {
+    void testFormat() {
         Money money = Money.parse("USD 1,000.24");
-        Assert.assertEquals("USD 1,000.24", money.toString());
+        assertThat(money.toString()).isEqualTo("USD 1,000.24");
     }
 
     @Test
-    public void testEquals() {
+    void testEquals() {
         Money a = Money.parse("USD 1,000.00");
         Money b = Money.parse("USD 500.00").plus(Money.parse("USD 500.00"));
-        Assert.assertEquals(a, b);
+        assertThat(a).isEqualTo(b);
     }
 
     @Test
-    public void testInterestRates() {
+    void testInterestRates() {
         Money accountBalance = Money.parse("USD 1,000.00");
         accountBalance = accountBalance.times(1.2);
-        Assert.assertEquals(Money.parse("USD 1,200.00"), accountBalance);
+        assertThat(accountBalance).isEqualTo(Money.parse("USD 1,200.00"));
     }
 
     @Test
-    public void testDeposit() {
+    void testDeposit() {
         Money accountBalance = Money.nothing(Currency.forSymbol("USD"));    // Arrange
         accountBalance = accountBalance.plus(Money.parse("USD 1,000.00"));  // Act
         accountBalance = accountBalance.plus(Money.parse("USD 230.00"));    // ...act more
         accountBalance = accountBalance.plus(Money.parse("USD 4.56"));      // ...act so much!
-        Assert.assertEquals(Money.parse("USD 1,234.56"), accountBalance);   // Assert
+        assertThat(accountBalance).isEqualTo(Money.parse("USD 1,234.56")); // Assert
     }
 
     @Test
-    public void testWithdraw() {
+    void testWithdraw() {
         Money accountBalance = Money.nothing(Currency.forSymbol("USD"));
         accountBalance = accountBalance.plus(Money.parse("USD 1,000.00"));
         accountBalance = accountBalance.minus(Money.parse("USD 543.22"));
-        Assert.assertEquals(Money.parse("USD 456.78"), accountBalance);
+        assertThat(accountBalance).isEqualTo(Money.parse("USD 456.78"));
     }
 
 }

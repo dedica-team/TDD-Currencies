@@ -1,4 +1,4 @@
-package org.haffson.currencies;
+package team.dedica.currencies;
 
 import java.util.Objects;
 import java.util.regex.Pattern;

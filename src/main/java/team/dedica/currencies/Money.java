@@ -1,4 +1,4 @@
-package org.haffson.currencies;
+package team.dedica.currencies;
 
 import java.util.Locale;
 import java.util.Objects;
