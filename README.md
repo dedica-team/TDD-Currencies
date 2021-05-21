@@ -20,13 +20,17 @@ System.out.println(accountBalance); // USD 2.00
 # Test Driven Java Development
 
 ## Task
+
 - Clone and setup in IntelliJ
 - Familiarise yourself with the code
 - Reproduce, understand, and fix the bug below, and make sure that it can't accidentally be introduced again
+
 ## TDD
+
 Test driven development means that you'll find and fix/add tests about the bug first (they will fail!), then fix the code (the tests will then pass), and you automatically ensured that the bug can't be introduced again (whoever changes your code back, will run into failing tests).
 
 ## Bug report
+
 _Hey support,_
 
 _we've been using your currencies library for quite a while now and had overall good results with it. However, yesterday we've run into a huge issue:_
