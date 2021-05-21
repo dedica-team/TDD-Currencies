@@ -24,14 +24,14 @@ System.out.println(accountBalance); // USD 2.00
 - Familiarise yourself with the code
 - Reproduce, understand, and fix the bug below, and make sure that it can't accidentally be introduced again
 ## TDD
-Test driven development means that you'll find and fix/add tests about the bug first (they will fail!), then fix the code (the tests will then pass), and you automatically ensured that the bug can't be introduced again (whoever changes your code back, will run into failing tests).
+Test driven development means that you'll find and fix/add tests about the bug first (they will fail!), then fix the code (the tests will then pass), and you automatically ensured that the bug can't be introduced again (whoever changes your code back, will run into failing tests).
 
 ## Bug report
 _Hey support,_
 
 _we've been using your currencies library for quite a while now and had overall good results with it. However, yesterday we've run into a huge issue:_
 
-_A customer opened an account in our New York branch and obviously her local currency has been set to USD. The next day however, she deposited 1,000,000 venezuelan bolivars (VEF) and that amount HAS BEEN CREDITED TO HER ACCOUNT IN US DOLLARS. (In case you don't know: 1,000,000 VEF are clearly not worth 1,000,000 USD!)_
+_A customer opened an account in our New York branch and obviously her local currency has been set to USD. The next day however, she deposited 1,000,000 venezuelan bolivars (VEF) and that amount HAS BEEN CREDITED TO HER ACCOUNT IN US DOLLARS. (In case you don't know: 1,000,000 VEF are clearly not worth 1,000,000 USD!)_
 
 _We are in a lot of debt now!!!_
 
