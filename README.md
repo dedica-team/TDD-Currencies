@@ -21,7 +21,7 @@ System.out.println(accountBalance); // USD 2.00
 
 ## Task
 
-- Clone and setup in IntelliJ
+- Fork, clone and setup in IntelliJ
 - Familiarise yourself with the code
 - Reproduce, understand, and fix the bug below, and make sure that it can't accidentally be introduced again
 
