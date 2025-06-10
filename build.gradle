@@ -27,8 +27,8 @@ dependencies {
 test {
     useJUnitPlatform()
     reports {
-        junitXml.enabled = true
-        html.enabled = true
+        junitXml.required = true
+        html.required = true
     }
 }
 
@@ -37,8 +37,8 @@ test.ignoreFailures = false
 jacocoTestReport {
     dependsOn test
     reports {
-        xml.enabled true
-        csv.enabled false
+        xml.required = true
+        csv.required = false
     }
 }
 
