@@ -2,8 +2,7 @@ package team.dedica.currencies;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.*;
 
 // See CurrencyTest for details. This class could probably use _a lot_ more tests, mostly
 // around parsing, but I'm lazy. :-)
@@ -11,7 +10,9 @@ class MoneyTest {
 
     @Test
     void testParse() {
-        Money.parse("USD 1,000.00");
+        assertThatNoException().isThrownBy(() -> {
+            Money.parse("USD 1,000.00");
+        });
     }
 
     @Test
