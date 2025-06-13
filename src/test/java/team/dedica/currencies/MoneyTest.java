@@ -17,8 +17,8 @@ class MoneyTest {
 
     @Test
     void testParseFails() {
-        assertThatThrownBy(() -> Money.parse("USD 1.000,24"))
-                .isInstanceOf(IllegalArgumentException.class);
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> Money.parse("USD 1.000,24"));
     }
 
     @Test
