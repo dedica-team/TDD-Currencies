@@ -57,4 +57,15 @@ public class MoneyTest {
         assertThat(accountBalance).isEqualTo(Money.parse("USD 456.78"));
     }
 
+    @Test
+    void shouldNotAllowAddingDifferentCurrencies() {
+        Money usd = Money.parse("USD 10.00");
+        Money vef = Money.parse("VEF 1,000,000.00");
+
+        // Expect an exception when mixing currencies
+        assertThatThrownBy(() -> usd.plus(vef))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("Cannot add Money values with different currencies");
+    }
+
 }
