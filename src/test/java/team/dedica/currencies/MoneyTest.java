@@ -10,9 +10,8 @@ class MoneyTest {
 
     @Test
     void testParse() {
-        assertThatNoException().isThrownBy(() -> {
-            Money.parse("USD 1,000.00");
-        });
+        assertThatNoException()
+                .isThrownBy(() -> Money.parse("USD 1,000.00"));
     }
 
     @Test
