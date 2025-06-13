@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 // See CurrencyTest for details. This class could probably use _a lot_ more tests, mostly
 // around parsing, but I'm lazy. :-)
-public class MoneyTest {
+class MoneyTest {
 
     @Test
     void testParse() {
@@ -15,7 +15,7 @@ public class MoneyTest {
     }
 
     @Test
-    public void testParseFails() {
+    void testParseFails() {
         assertThatThrownBy(() -> Money.parse("USD 1.000,24"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
