@@ -1,6 +1,5 @@
 package team.dedica.currencies;
 
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Assert: Check if our expectations hold true. By using the Assert classes and methods, we
  *         can report things in a way that work nicely with reporting in IntelliJ and other tools
  */
-public class CurrencyTest {
+class CurrencyTest {
 
     @Test
     void testValidSymbol() {

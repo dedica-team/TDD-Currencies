@@ -69,11 +69,15 @@ public class Currency {
         // anything, even a String or something.
 
         // Exact same reference? Obviously equal then. (Someone called a.equals(a))
-        if (this == o) return true;
+        if (this == o) {
+            return true;
+        }
 
         // Is the other object "null" or of a different class? Then it can't be equal!
         // Someone called a.equals(null) or a.equals("string, lol, meaningless").
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         // Cast (i.e. force) the other object to be a Currency. (This could fail at runtime
         // obviously if o is not a Currency, but we checked that in the line above.)
