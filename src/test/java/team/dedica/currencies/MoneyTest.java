@@ -24,7 +24,7 @@ class MoneyTest {
     @Test
     void testFormat() {
         Money money = Money.parse("USD 1,000.24");
-        assertThat(money.toString()).isEqualTo("USD 1,000.24");
+        assertThat(money).hasToString("USD 1,000.24");
     }
 
     @Test
