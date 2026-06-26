@@ -42,5 +42,3 @@ _We are in a lot of debt now!!!_
 _WTF guys??_
 
 _Can you look into this? Adding foreign currencies to an account seems like a bad thing and should be prevented._
-
-
