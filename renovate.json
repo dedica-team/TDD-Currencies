@@ -1,7 +1,37 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>dedica-team/renovate-presets//default",
-    ":semanticCommitsDisabled"
+    "config:recommended",
+    ":configMigration",
+    ":disableRateLimiting",
+    ":maintainLockFilesWeekly",
+    ":pinAllExceptPeerDependencies",
+    "helpers:pinGitHubActionDigestsToSemver",
+    "docker:pinDigests",
+    ":separatePatchReleases",
+    ":separateMultipleMajorReleases",
+    ":separateMultipleMinorReleases"
+  ],
+  "addLabels": ["Renovate"],
+  "dependencyDashboard": {
+    "labels": ["Renovate"]
+  },
+  "minimumReleaseAge": "7 days",
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "pin",
+        "pinDigest",
+        "replacement",
+        "bump",
+        "rollback",
+        "lockfileUpdate",
+        "lockFileMaintenance"
+      ],
+      "minimumReleaseAge": null,
+      "prBodyNotes": [
+        "⚠️ Release-age check skipped. Renovate cannot verify release age for this update type. Before merging, review any dependency versions introduced by the PR, including lockfile changes."
+      ]
+    }
   ]
 }
